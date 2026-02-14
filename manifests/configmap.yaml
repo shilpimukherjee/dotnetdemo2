@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cutiepie-dotnet-config
+  namespace: my-dotnet-namespace
+  labels:
+    app.kubernetes.io/name: cutiepie-dotnet
+    kubernetes.azure.com/generator: devhub
+data:
+  Env_Details: Testing
