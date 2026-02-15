@@ -1,13 +1,13 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: cutiepie-dotnet
+  name: my-dotnet-project
   labels:
-    app.kubernetes.io/name: cutiepie-dotnet
-    app.kubernetes.io/part-of: cutiepie-dotnet-project
+    app.kubernetes.io/name: my-dotnet-project
+    app.kubernetes.io/part-of: my-dotnet-project-project
     kubernetes.azure.com/generator: devhub
 spec:
   maxUnavailable: 1
   selector:
     matchLabels:
-      app: cutiepie-dotnet
+      app: my-dotnet-project
