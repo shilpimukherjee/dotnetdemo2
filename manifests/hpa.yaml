@@ -1,16 +1,16 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: cutiepie-dotnet
+  name: my-dotnet-project
   labels:
-    app.kubernetes.io/name: cutiepie-dotnet
-    app.kubernetes.io/part-of: cutiepie-dotnet-project
+    app.kubernetes.io/name: my-dotnet-project
+    app.kubernetes.io/part-of: my-dotnet-project-project
     kubernetes.azure.com/generator: devhub
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: cutiepie-dotnet
+    name: my-dotnet-project
   minReplicas: 1
   maxReplicas: 5
   metrics:

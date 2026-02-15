@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cutiepie-dotnet
+  name: my-dotnet-project
   labels:
-    app.kubernetes.io/name: cutiepie-dotnet
+    app.kubernetes.io/name: my-dotnet-project
     kubernetes.azure.com/generator: devhub
-  namespace: my-dotnet-namespace
+  namespace: namespace-workflow-1771162579886
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app.kubernetes.io/name: cutiepie-dotnet
+      app.kubernetes.io/name: my-dotnet-project
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: cutiepie-dotnet
+        app.kubernetes.io/name: my-dotnet-project
     spec:
       containers:
-        - name: cutiepie-dotnet
-          image: myaksdemoregistry.azurecr.io/my-dotnetdemo-image:latest
+        - name: my-dotnet-project
+          image: myaksdemoregistry.azurecr.io/image-workflow-1771162579886:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
@@ -31,7 +31,7 @@ spec:
               memory: "1Gi"
           envFrom:
             - configMapRef:
-                name: cutiepie-dotnet-config
+                name: my-dotnet-project-config
             - secretRef:
                 name: secret-ref
                 optional: true
@@ -83,11 +83,11 @@ spec:
               topologyKey: kubernetes.io/hostname
               labelSelector:
                 matchLabels:
-                  app.kubernetes.io/name: cutiepie-dotnet
+                  app.kubernetes.io/name: my-dotnet-project
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
-              app.kubernetes.io/name: cutiepie-dotnet
+              app.kubernetes.io/name: my-dotnet-project

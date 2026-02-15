@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cutiepie-dotnet
-  namespace: my-dotnet-namespace
+  name: my-dotnet-project
+  namespace: namespace-workflow-1771162579886
   labels:
-    app.kubernetes.io/name: cutiepie-dotnet
+    app.kubernetes.io/name: my-dotnet-project
     kubernetes.azure.com/generator: devhub
 spec:
   type: LoadBalancer
   selector:
-    app.kubernetes.io/name: cutiepie-dotnet
+    app.kubernetes.io/name: my-dotnet-project
   ports:
     - protocol: TCP
       port: 5000

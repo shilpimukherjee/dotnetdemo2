@@ -1,10 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cutiepie-dotnet-config
-  namespace: my-dotnet-namespace
+  name: my-dotnet-project-config
+  namespace: namespace-workflow-1771162579886
   labels:
-    app.kubernetes.io/name: cutiepie-dotnet
+    app.kubernetes.io/name: my-dotnet-project
     kubernetes.azure.com/generator: devhub
 data:
-  Env_Details: Testing
